@@ -24,3 +24,18 @@
 仅新增来源说明及所需祖先许可证，未修改上游文件。本机暂存路径未写入版本化技能元数据。本地安装目录与本仓库 `skills/` 文件逐项哈希一致。目录完整性清单为 `skills.sha256`。
 
 当前无同名技能冲突；安装、链接与GitHub发布是独立状态。公开收录仓库为 [BorisW269/skills](https://github.com/BorisW269/skills)，经用户明确确认公开上传；实际发布commit见仓库历史。
+
+## 2026-10-18第二批：综述、论文写作与语言润色
+
+此前六项保留原有版本。本批使用作者原仓库的完整commit下载，技能原始文件不改动；新增内容仅为 `UPSTREAM_SOURCE.json` 和必要祖先许可证。
+
+| 技能 | 作者仓库与目录 | 固定完整commit | 安装日期 | 原始文件数 | 本次修改 |
+| --- | --- | --- | --- | ---: | --- |
+| `literature-review` | [K-Dense-AI/scientific-agent-skills/skills/literature-review](https://github.com/K-Dense-AI/scientific-agent-skills/tree/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/literature-review) | `a1043ef544e3a100c28e70a736b6cf32554d0677` | 2026-10-18 | 12 | 原始文件未修改；新增来源记录与适用祖先许可证 |
+| `scientific-writing` | [K-Dense-AI/scientific-agent-skills/skills/scientific-writing](https://github.com/K-Dense-AI/scientific-agent-skills/tree/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/scientific-writing) | `a1043ef544e3a100c28e70a736b6cf32554d0677` | 2026-10-18 | 31 | 原始文件未修改；新增来源记录与适用祖先许可证 |
+| `sci-ssci-polishing` | [Yila-AI/awesome-research-skills/skills/sci-ssci-polishing](https://github.com/Yila-AI/awesome-research-skills/tree/0609e85b6dbfdae8a48ba66c332d340265d7b3e5/skills/sci-ssci-polishing) | `0609e85b6dbfdae8a48ba66c332d340265d7b3e5` | 2026-10-18 | 7 | 原始文件未修改；新增来源记录与适用祖先许可证 |
+| `venue-templates` | [K-Dense-AI/scientific-agent-skills/skills/venue-templates](https://github.com/K-Dense-AI/scientific-agent-skills/tree/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/venue-templates) | `a1043ef544e3a100c28e70a736b6cf32554d0677` | 2026-10-18 | 32 | 原始文件未修改；新增来源记录与适用祖先许可证 |
+| `peer-review` | [K-Dense-AI/scientific-agent-skills/skills/peer-review](https://github.com/K-Dense-AI/scientific-agent-skills/tree/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/peer-review) | `a1043ef544e3a100c28e70a736b6cf32554d0677` | 2026-10-18 | 24 | 原始文件未修改；新增来源记录与适用祖先许可证 |
+| `paper-polisher` | [yujie-jason-zhang/polish_skill/paper-polisher](https://github.com/yujie-jason-zhang/polish_skill/tree/9b2a86ca6ac88879a3d3490fecdb909673fd1562/paper-polisher) | `9b2a86ca6ac88879a3d3490fecdb909673fd1562` | 2026-10-18 | 5 | 原始文件未修改；新增来源记录与适用祖先许可证 |
+
+K-Dense新增四项沿用作者MIT许可；Yila-AI的sci-ssci-polishing保留Apache-2.0许可；paper-polisher保留其作者仓库MIT许可。具体原文均随技能保留，不能把本仓库全部技能视为同一许可证。新增111个上游原始文件已按固定commit归档逐一核对；`skills.sha256`记录所有版本化技能文件的SHA256，不嵌入任何上游 `.git`。

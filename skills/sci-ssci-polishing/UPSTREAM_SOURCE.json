@@ -1,0 +1,22 @@
+{
+  "skill_name": "sci-ssci-polishing",
+  "repository": "https://github.com/Yila-AI/awesome-research-skills",
+  "repository_path": "skills/sci-ssci-polishing",
+  "commit": "0609e85b6dbfdae8a48ba66c332d340265d7b3e5",
+  "default_branch": "main",
+  "installed_on": "2026-10-18",
+  "upstream_files_modified": false,
+  "source_url": "https://github.com/Yila-AI/awesome-research-skills/tree/0609e85b6dbfdae8a48ba66c332d340265d7b3e5/skills/sci-ssci-polishing",
+  "source_file_count": 7,
+  "additional_local_files": [
+    "UPSTREAM_SOURCE.json",
+    ".upstream-licenses/LICENSE"
+  ],
+  "license_files": [
+    {
+      "upstream_path": "LICENSE",
+      "local_path": ".upstream-licenses/LICENSE"
+    }
+  ],
+  "notes": "All files in the selected upstream skill directory were copied without modification. Additional local provenance and ancestor license files are listed separately. No upstream .git directory is included."
+}

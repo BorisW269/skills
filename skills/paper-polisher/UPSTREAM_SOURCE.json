@@ -1,0 +1,22 @@
+{
+  "skill_name": "paper-polisher",
+  "repository": "https://github.com/yujie-jason-zhang/polish_skill",
+  "repository_path": "paper-polisher",
+  "commit": "9b2a86ca6ac88879a3d3490fecdb909673fd1562",
+  "default_branch": "main",
+  "installed_on": "2026-10-18",
+  "upstream_files_modified": false,
+  "source_url": "https://github.com/yujie-jason-zhang/polish_skill/tree/9b2a86ca6ac88879a3d3490fecdb909673fd1562/paper-polisher",
+  "source_file_count": 5,
+  "additional_local_files": [
+    "UPSTREAM_SOURCE.json",
+    ".upstream-licenses/LICENSE"
+  ],
+  "license_files": [
+    {
+      "upstream_path": "LICENSE",
+      "local_path": ".upstream-licenses/LICENSE"
+    }
+  ],
+  "notes": "All files in the selected upstream skill directory were copied without modification. Additional local provenance and ancestor license files are listed separately. No upstream .git directory is included."
+}

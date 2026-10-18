@@ -1,0 +1,22 @@
+{
+  "skill_name": "scientific-writing",
+  "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+  "repository_path": "skills/scientific-writing",
+  "commit": "a1043ef544e3a100c28e70a736b6cf32554d0677",
+  "default_branch": "main",
+  "installed_on": "2026-10-18",
+  "upstream_files_modified": false,
+  "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/tree/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/scientific-writing",
+  "source_file_count": 31,
+  "additional_local_files": [
+    "UPSTREAM_SOURCE.json",
+    ".upstream-licenses/LICENSE.md"
+  ],
+  "license_files": [
+    {
+      "upstream_path": "LICENSE.md",
+      "local_path": ".upstream-licenses/LICENSE.md"
+    }
+  ],
+  "notes": "All files in the selected upstream skill directory were copied without modification. Additional local provenance and ancestor license files are listed separately. No upstream .git directory is included."
+}

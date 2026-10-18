@@ -73,3 +73,60 @@ scientific-slides/scientific-schematics的图像生成和视觉review使用OpenR
 citation-management的NCBI/OpenAlex key为可选，基础查询仍受外部服务网络、速率和配额限制，本次没有把缺失requests的网络路径声称为已验证。
 
 机器可读原始记录与小型探针仅保留在本机本任务审计目录，不纳入仓库。探针不是正式科研成果。
+
+
+---
+
+# 新增科研写作技能依赖检查
+
+检查日期：2026-10-18（Asia/Shanghai）。本次仅做本机工具、Python 模块元数据和上游脚本导入项的只读核查；没有安装软件、执行下载的上游脚本、调用付费 API 或变更权限。此报告区分技能发现与运行依赖，不把静态检查当成功能试运行。
+
+## 运行时
+
+| 项目 | 实际结果 |
+|---|---|
+| Codex | `codex-cli 0.163.0-alpha.10.2` |
+| Codex 二进制 | `%USERPROFILE%\AppData\Local\OpenAI\Codex\bin\896a0166b774037a\codex.exe` |
+| Codex 配套 Python | `3.12.14`；`%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe` |
+| PATH 默认 Python | `3.9.5`；`D:\py\Python39\python.exe`；不能满足部分新技能 Python 3.11+ 要求，应使用上行配套 Python |
+| Node.js | `v24.19.0`；Codex 配套运行时；六个新增技能的本地 Python 检查脚本不要求 Node |
+| pnpm | PATH 可用；本次六项不要求安装 Node 包 |
+| Poppler | `pdfinfo`、`pdftoppm` 可用；PATH 未发现 `pdftotext` |
+| LaTeX | PATH 未发现 `xelatex`、`pdflatex`、`lualatex`、`latexmk`、`bibtex`、`biber`、`tectonic` |
+| Pandoc / uv | PATH 未发现 `pandoc`、`uv` |
+
+“PATH 未发现”是当前调用环境中的不可用状态，不声称已扫描本机全盘。没有为了发现技能扩大目录访问权限。
+
+## 六个技能逐项结果
+
+| 技能 | 上游声明与代码静态检查 | 当前可用范围与缺失项 |
+|---|---|---|
+| literature-review | Python 3.10+；`search_databases.py` 使用标准库；DOI 核验与 AI 示意图脚本导入 `requests`；PDF 导出需 Pandoc 与 XeLaTeX | Python 版本满足，检索/综述指导可使用；配套 Python 和默认 Python 均缺少 `requests`。Pandoc、XeLaTeX 未就绪；可选 `uv` 和 `parallel-cli` 检索路径未就绪。可选 OpenRouter 生图功能需要用户自行配置 API，未配置或调用 |
+| scientific-writing | Python 3.11+，全部本地辅助脚本声明无第三方依赖、离线运行；AST 导入项与此一致 | 配套 Python 3.12 满足版本和标准库要求；核心写作指导及本地工具依赖具备。本次未执行上游脚本，未判定其实际输出质量 |
+| venue-templates | Python 3.11+；辅助脚本只用标准库；编译及 PDF 检查按功能调用 LaTeX/Poppler；获取期刊当前指南需网络 | 模板查询/定制依赖具备，`pdfinfo` 可用；LaTeX 编译链及 `pdftotext` 缺失。正式套版需以目标期刊当前官方指南为准 |
+| peer-review | Python 3.11+ 标准库；本地 CLI 不调用网络、模型或外部服务；AST 导入项与此一致 | 配套 Python 3.12 满足版本和标准库要求；未执行上游脚本。评审具体稿件时需遵循其保密和授权工作流 |
+| sci-ssci-polishing | `check_invariants.py` 导入 argparse、collections、json、pathlib、re，均为标准库 | 配套 Python 标准库具备；润色指导不要求额外独立 API；本次未执行脚本 |
+| paper-polisher | `check_preservation.py` 导入 argparse、collections、dataclasses、difflib、pathlib、re、sys，均为标准库 | 配套 Python 标准库具备；文本/TeX 保真核验本身不要求 TeX 编译器。若要本机编译润色后的 TeX，仍缺 LaTeX 编译链；本次未执行脚本 |
+
+## Python 模块补充核查
+
+Codex 配套 Python 已有 `numpy 2.3.5`、`pandas 3.0.1`、`pypdf 6.10.0`、`pdfplumber 0.11.9`、`reportlab 4.4.9`、`python-docx 1.2.0`、`pypdfium2 5.14.0`、`Pillow 12.3.0`。模块存在及版本来自模块定位/包元数据；本次没有导入运行这些库。
+
+配套 Python 未发现 `requests`、`httpx`、`PyYAML`、`bibtexparser`、`PyMuPDF`、`matplotlib`、`scipy`、`seaborn`、`plotly`、`beautifulsoup4`、`arxiv`、`scholarly`、`crossrefapi`、`openai`、`python-dotenv`、`markitdown`。其中仅 `requests` 是本次 literature-review 部分配套脚本的直接第三方依赖，其余不能一概视为六个新增技能的必装项。
+
+默认 Python 3.9 有 `matplotlib 3.9.4`、`seaborn 0.13.2`、`numpy 2.0.2`、`pandas 2.3.3`，但缺 `requests`、`bibtexparser`，且版本不满足上述 Python 3.11+ 工具要求。不要混淆两个 Python 环境。
+
+## 可选账号与服务
+
+`literature-review` 的 Parallel 检索需要用户完成 Parallel 身份验证；AI 概念图生成需要 OpenRouter API。常规综述组织、语言润色、期刊风格适配和离线检查不需要新增付费服务。此次没有读取凭据文件、注册服务或配置密钥。账号/API 权限不是通过本次静态依赖核查确认的。
+
+## 本机发现依据
+
+官方文档列出的用户级目录是 `$HOME/.agents/skills`，并支持扫描目录链接的目标。实际用户级路径为 `%USERPROFILE%\.agents\skills`；实体位置按用户指定保留在 `D:\.agents\skills`。本次创建的6个新Junction已由真实 `skills/list` 强制刷新验证：新增6项全部为user作用域且enabled，原6项仍被识别，扫描无错误。文件存在、目录链接存在与列表已识别分别验证。
+
+官方依据：[Build skills](https://learn.chatgpt.com/docs/build-skills)，2026-10-18 访问。上游声明取自本次下载的固定 commit，完整来源记录由安装清单保存。
+
+最终实际扫描结果：使用本机当前 Codex `0.163.0-alpha.10.2` 二进制启动只读 app-server，调用 `skills/list` 并设置 `forceReload=true`，六个新增技能全部返回 `scope=user`、`enabled=true`，真实解析路径均为 `D:\.agents\skills\技能名\SKILL.md`，`errors=[]`。原有六个技能也仍被识别。此检查没有启动模型对话或重启用户正在使用的 App。
+
+如果已有对话的技能选择器尚未更新，可在后续新对话使用 `$literature-review`、`$scientific-writing` 等名字明确调用；若仍未出现，再重新加载或重启 Codex。本次本机后端发现已通过，不要求为此默认修改权限。
+
