@@ -1,0 +1,35 @@
+{
+  "skill": "slides",
+  "requested_repository": "JetBrains/skills",
+  "repository": "JetBrains/skills",
+  "repository_url": "https://github.com/JetBrains/skills",
+  "requested_path": "slides",
+  "path": "slides",
+  "source_url": "https://github.com/JetBrains/skills/tree/e0f258b5cfed145015cb3e48da9a97947f7c4ed7/slides",
+  "default_branch_at_download": "main",
+  "commit": "e0f258b5cfed145015cb3e48da9a97947f7c4ed7",
+  "installed_at": "2026-10-18T15:28:01+08:00",
+  "install_date": "2026-10-18",
+  "original_file_count": 9,
+  "original_files_sha256": {
+    "agents/openai.yaml": "c99c7732abdfb661435dd3c61067070a1a7b33bbd582a32fd3a0bf10ec3c2dde",
+    "assets/slides-small.svg": "1e9354b508ece05e8902520826c6b6f48aa289335fa7759baf1c444b6be1cdab",
+    "assets/slides.png": "879c4ff68c3930ea609b4d9f018a91756a785fb263c30994b05ac53c6f1ca6a8",
+    "LICENSE.txt": "c16f8dcf1a368b83be78d826ea23de4079fe1b4469a0ab9ee20563f37ff3d44b",
+    "scripts/create_montage.py": "26a93052c84831222b5f244832ab263026882062d15e8fb8d4ce6f235e092984",
+    "scripts/detect_font.py": "07537d7181f79fb65e84810604ddd814165d1ac90481b208bb8b206048aa637d",
+    "scripts/render_slides.py": "a5fd2d975233e69f55c87c84a54b6ce5990a52e78293db5412bdc44cd528b4ea",
+    "scripts/slides_test.py": "916882b8a88b7fe39e76c9009cbef3afa6a29a9e626d160b198c04f7f6a6a69b",
+    "SKILL.md": "3485a8193687a12d27442bef26b273a1310d17d4f59c3ca4f50708a7bbae92fb"
+  },
+  "upstream_skill_files_modified": false,
+  "local_metadata_added": [
+    "UPSTREAM_SOURCE.json"
+  ],
+  "license_files_within_skill": [
+    "LICENSE.txt"
+  ],
+  "applicable_ancestor_licenses": [],
+  "install_directory": "D:\\.agents\\skills\\slides",
+  "status": "installed"
+}
